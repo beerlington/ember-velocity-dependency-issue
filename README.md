@@ -1,53 +1,28 @@
 # Ember-velocity-issue
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repo is used to demonstrate an issue with ember-velocity-mixin that was introduced in Ember 1.10.0.
 
-## Prerequisites
+```
+Assertion Failed: Velocity.js must be installed to use this mixin.
+```
 
-You will need the following things properly installed on your computer.
+## Steps to reproduce
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+1. `git clone git@github.com:beerlington/ember-velocity-dependency-issue.git`
+2. `cd ember-velocity-dependency-issue`
+3. `ember install`
+4. `ember test`
 
-## Installation
+You should see the following error:
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
-
-## Running / Development
-
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+```
+not ok 7 PhantomJS 1.9 - XHelloComponent: it renders
+    ---
+        actual: >
+            null
+        message: >
+            beforeEach failed on it renders: Assertion Failed: Velocity.js must be installed to use this mixin.
+        Log: >
+    ...
+ok 8 PhantomJS 1.9 - JSHint - unit/components: unit/components/x-hello-test.js should pass jshint
+```
